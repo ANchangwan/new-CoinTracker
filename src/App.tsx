@@ -1,13 +1,16 @@
-import {Outlet} from "react-router-dom";
+import {Outlet,ScrollRestoration} from "react-router-dom";
 import Navbar from "./components/Navbar.tsx";
 
 
 function App() {
 
   return (
-      <div className="grid grid-cols-3 md:grid-cols-[1fr_3fr] h-screen">
+      <div className="dark:bg-gray-800 relative">
           <Navbar/>
-          <Outlet/>
+          <div className="absolute left-1/3 top-8">
+              <Outlet/>
+          </div>
+          <ScrollRestoration/>
       </div>
   )
 }
