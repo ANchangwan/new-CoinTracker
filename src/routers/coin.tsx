@@ -17,22 +17,22 @@ function Coin(){
 
 
     return (
-        <div className="grid grid-cols-4 gap-x-44 gap-y-2">
-            {coins.slice(0, 20).map((coin, i) => (
-                <div key={i}  className="w-64 h-48 bg-amber-900 rounded-xl p-4 flex flex-col">
-                    <div className="flex flex-col flex-grow justify-start items-start">
-                        <div className="flex gap-2 ">
-                            <img className="size-2/6" src={coin.image}/>
-                            <h1 className="text-white uppercase font-semibold">{coin.id}</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+            {coins.slice(0, 50).map((coin, i) => (
+                <div key={i} className="bg-amber-900 rounded-xl p-4 flex flex-col justify-between h-44">
+                    <div className="flex flex-col justify-start items-start space-y-1">
+                        <div className="flex items-center gap-2">
+                            <img className="w-8 h-8" src={coin.image} alt={coin.id}/>
+                            <h1 className="text-white uppercase font-semibold text-sm">{coin.id}</h1>
                         </div>
-                        <span className="text-white text-2xl">$ {coin.current_price}</span>
+                        <span className="text-white text-xl">$ {coin.current_price}</span>
                     </div>
                     <div className="flex flex-col items-end justify-end text-xl font-semibold">
                         <span className="opacity-50">${coin.current_price}</span>
-                        <span className={` ${parseFloat(String(coin.price_change_percentage_24h)) < 0 ? 'text-red-500' : 
+                        <span className={`${parseFloat(String(coin.price_change_percentage_24h)) < 0 ? 'text-red-500' :
                             parseFloat(String(coin.price_change_percentage_24h)) > 0 ? 'text-green-500' : 'text-gray-500'}`}>
-                            {coin.price_change_percentage_24h}%
-                        </span>
+                        {coin.price_change_percentage_24h}%
+                    </span>
                     </div>
                 </div>
             ))}
