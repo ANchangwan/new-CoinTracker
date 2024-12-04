@@ -4,3 +4,11 @@ export async function  getCoinAPi(){
     const json = await response.json();
     return json;
 }
+
+export async function getCoinDetail({coinId}:{coinId:string}){
+    const response = await fetch(
+        `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false`
+    );
+    const json = await response.json();
+    return json();
+}
