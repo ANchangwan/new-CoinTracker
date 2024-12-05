@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar.tsx";
 
 
 function App() {
-
   return (
       <div className="dark:bg-gray-800 relative">
           <Navbar/>

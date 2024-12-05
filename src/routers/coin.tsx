@@ -6,8 +6,9 @@ import CoinList from "../components/CoinList.tsx";
 
 function Coin(){
     const {data, isLoading} = useQuery<CoinProps[]>({
-        queryKey: ['delay'],
-        queryFn: getCoinAPi
+        queryKey: ['Coins Data'],
+        queryFn: getCoinAPi,
+        staleTime: 1000 * 60 * 60
     });
 
     return (

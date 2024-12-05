@@ -10,5 +10,5 @@ export async function getCoinDetail({coinId}:{coinId:string}){
         `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false`
     );
     const json = await response.json();
-    return json();
+    return json;
 }
