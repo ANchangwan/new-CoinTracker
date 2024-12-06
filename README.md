@@ -20,7 +20,7 @@ Tailwind CSS와 Atomic 디자인 패턴의 조합은 다음과 같은 이점을 
 따라서 React에서 Atomic 디자인 패턴을 효과적으로 구현하기 위해서는 Tailwind CSS가 중요한 역할을 합니다
 
 
-# TanStack Query
+# 🧑‍💻TanStack Query
 React Query는 React 환경에서 서버 상태 관리를 위한 강력한 라이브러리로, 다음과 같은 주요 장점을 제공합니다
 ## ✍️ 장점
 데이터 캐싱<br/>

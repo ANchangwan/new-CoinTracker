@@ -1,22 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import {useQuery} from "@tanstack/react-query";
+import {getCoinAPi, getCoinDetail} from "../api/apis.ts";
 
 function Coins() {
   const { coinId } = useParams();
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false`
-        );
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error("데이터를 가져오는 중 오류 발생:", error);
+  if(!coinId) throw new Error("Coins not found!");
+  const {isLoading, data}=useQuery(
+      {
+        queryKey: [`${coinId} Detail`],
+        queryFn:() => getCoinDetail(coinId),
+        staleTime: 1000 * 60 * 60
       }
-    })();
-  }, []);
-
+  )
+  console.log(data,isLoading)
   return <h1 className="text-blue-500 text-6xl">coin {coinId}</h1>;
 }
 

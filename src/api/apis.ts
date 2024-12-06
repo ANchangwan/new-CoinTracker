@@ -5,7 +5,10 @@ export async function  getCoinAPi(){
     return json;
 }
 
-export async function getCoinDetail({coinId}:{coinId:string}){
+export async function getCoinDetail(coinId: string){
+    if (!coinId) {
+        throw new Error("coinId is required");
+    }
     const response = await fetch(
         `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false`
     );
