@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 import {useQuery} from "@tanstack/react-query";
-import {getCoinAPi, getCoinDetail} from "../api/apis.ts";
+import { getCoinDetail} from "../api/apis.ts";
+import BackBtn from "../components/BackBtn.tsx";
 
 function Coins() {
   const { coinId } = useParams();
@@ -13,8 +13,12 @@ function Coins() {
         staleTime: 1000 * 60 * 60
       }
   )
-  console.log(data,isLoading)
-  return <h1 className="text-blue-500 text-6xl">coin {coinId}</h1>;
+
+  return (
+      <div className="text-blue-500 text-6xl">
+        <BackBtn/>
+      </div>
+  );
 }
 
 export default Coins;
