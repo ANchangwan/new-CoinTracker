@@ -8,7 +8,7 @@ function BackBtn() {
         navigate('/');
     }
     return (
-        <button className="flex justify-center text-3xl items-center size-14 rounded-full text-white bg-gray-400"
+        <button className="flex justify-center text-3xl items-center size-10 rounded-full text-white bg-gray-400"
                 onClick={useback} >
             <FaHome />
         </button>
