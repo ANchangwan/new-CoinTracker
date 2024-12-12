@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import './index.css'
 import App from './App.tsx'
-import Coin from "./routers/coin.tsx";
 import Coins from "./routers/coins.tsx";
+import Coin from "./routers/./coin.tsx";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 
 
@@ -19,11 +19,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "",
-                element: <Coin />,
+                element: <Coins />,
             },
             {
                 path:"coin/:coinId",
-                element:<Coins />
+                element:<Coin />
             }
         ],
     },
