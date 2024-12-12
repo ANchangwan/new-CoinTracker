@@ -27,7 +27,7 @@ export interface CoinProps {
     last_updated: string;
 }
 
-interface Ticker {
+type Ticker = {
     base: string;
     bid_ask_spread_percentage: number;
     coin_id: string;
@@ -61,19 +61,19 @@ interface Ticker {
     volume: number;
 }
 
-type TickersArray = Ticker;
+type TickersArray = Ticker[];
 
 interface PriceChangeData {
     price_change_24h: number;
-    price_change_percentage_24h: number;
-    price_change_percentage_7d: number;
-    price_change_percentage_14d: number;
-    price_change_percentage_30d: number;
-    price_change_percentage_60d: number;
-    price_change_percentage_200d: number;
-    price_change_percentage_1y: number;
-    market_cap_change_24h: number;
-    market_cap_change_percentage_24h: number;
+    price_change_percentage_24h: number ;
+    price_change_percentage_7d: number ;
+    price_change_percentage_14d: number ;
+    price_change_percentage_30d: number ;
+    price_change_percentage_60d: number ;
+    price_change_percentage_200d: number ;
+    price_change_percentage_1y: number ;
+    market_cap_change_24h: number ;
+    market_cap_change_percentage_24h: number ;
 }
 
 export interface IinfoData {
@@ -93,7 +93,7 @@ export interface IinfoData {
         en: string;
         // Add other language descriptions as needed
     };
-    detail_platforms: { [key: string]: any };
+    detail_platforms: { [key: string]: string };
     developer_data: {
         forks: number;
         stars: number;
@@ -132,6 +132,4 @@ export interface IinfoData {
     tickers:  TickersArray;
     watchlist_portfolio_users: number;
     web_slug: string;
-
-
 }
