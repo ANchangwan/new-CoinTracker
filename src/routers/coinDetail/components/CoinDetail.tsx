@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom";
 import {InfoData} from "../../../types/type.ts";
 import BoxContainer from "../../../globalComponents/boxContainer.tsx";
-import PriceTrendIndicator from "../../../globalComponents/PriceTrendIndicator.tsx";
+import PriceTrendIndicator from "../../../utils/PriceTrendIndicator.tsx";
 
 
 

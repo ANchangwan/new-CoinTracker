@@ -1,20 +1,22 @@
 import {redirect, useParams} from "react-router-dom";
 import {useQuery} from "@tanstack/react-query";
-import { getCoinDetail} from "../../api/apis.ts";
+// import { getCoinDetail} from "../../api/apis.ts";
 import BackBtn from "../../globalComponents/BackBtn.tsx";
 import CoinDetail from "./components/CoinDetail.tsx";
 import {InfoData} from "../../types/type.ts";
+import {getCoinDetail} from "./api/api.ts";
 
 
-
-function useCoinDetail(coinId: string) {
-    return useQuery<InfoData>(
+function useGetCoinDetail(coinId: string) {
+    const oneHour = 1000 * 60 * 60;
+    const {data,isLoading} = useQuery<InfoData>(
         {
             queryKey: [`${coinId} Detail`],
             queryFn:() => getCoinDetail(coinId),
-            staleTime: 1000 * 60 * 60
+            staleTime: oneHour
         }
-    )
+    );
+    return {data, isLoading};
 }
 
 function Coin() {
@@ -23,7 +25,7 @@ function Coin() {
         redirect("/");
         throw new Error("Coin not found.");
     }
-    const {data, isLoading} = useCoinDetail(coinId);
+    const {data, isLoading} = useGetCoinDetail(coinId);
 
     if(isLoading) return <div>loading...</div>
 
