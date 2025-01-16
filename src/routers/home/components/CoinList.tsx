@@ -1,5 +1,5 @@
 
-import {CoinProps} from "../types/type.ts";
+import {CoinProps} from "../../../types/type.ts";
 import {Link} from "react-router-dom";
 
 

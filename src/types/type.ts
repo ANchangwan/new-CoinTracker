@@ -63,7 +63,7 @@ type Ticker = {
 
 type TickersArray = Ticker[];
 
-interface PriceChangeData {
+export interface PriceChangeData {
     price_change_24h: number;
     price_change_percentage_24h: number ;
     price_change_percentage_7d: number ;
@@ -74,9 +74,13 @@ interface PriceChangeData {
     price_change_percentage_1y: number ;
     market_cap_change_24h: number ;
     market_cap_change_percentage_24h: number ;
+    high_24h:{
+        usd: number;
+    };
 }
 
-export interface IinfoData {
+export interface InfoData {
+
     asset_platform_id: null | string;
     block_time_in_minutes: number;
     categories: string[];
@@ -120,7 +124,21 @@ export interface IinfoData {
         // Add other link properties as needed
     };
     market_cap_rank: number;
-    market_data: PriceChangeData;
+    market_data: {
+        price_change_24h: number;
+        price_change_percentage_24h: number ;
+        price_change_percentage_7d: number ;
+        price_change_percentage_14d: number ;
+        price_change_percentage_30d: number ;
+        price_change_percentage_60d: number ;
+        price_change_percentage_200d: number ;
+        price_change_percentage_1y: number ;
+        market_cap_change_24h: number ;
+        market_cap_change_percentage_24h: number ;
+        high_24h:{
+            usd: number;
+        };
+    };
     name: string;
     platforms: { [key: string]: string };
     preview_listing: boolean;

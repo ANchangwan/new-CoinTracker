@@ -1,7 +1,9 @@
-import {CoinProps} from "../types/type.ts";
+import {CoinProps} from "../../types/type.ts";
 import { useQuery } from '@tanstack/react-query';
-import {getCoinAPi} from "../api/apis.ts";
-import CoinList from "../components/CoinList.tsx";
+import {getCoinAPi} from "../../api/apis.ts";
+import CoinList from "./components/CoinList.tsx";
+
+
 
 
 function Coins(){

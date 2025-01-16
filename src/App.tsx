@@ -1,5 +1,5 @@
 import {Outlet,ScrollRestoration} from "react-router-dom";
-import Navbar from "./components/Navbar.tsx";
+import Navbar from "./globalComponents/Navbar.tsx";
 
 
 function App() {

@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import './index.css'
 import App from './App.tsx'
-import Coins from "./routers/coins.tsx";
-import Coin from "./routers/./coin.tsx";
+import Coins from "./routers/home/coins.tsx";
+import Coin from "./routers/coinDetail/coin.tsx";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 
 
