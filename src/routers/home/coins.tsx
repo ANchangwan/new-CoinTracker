@@ -21,7 +21,7 @@ function Coins(){
     const {data, isLoading} = useGetCoinData();
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+        <div className="w-full grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-4">
             {isLoading ? <div>...Loading</div> : <CoinList coins={data ?? []} />}
         </div>
     );

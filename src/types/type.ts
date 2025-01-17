@@ -138,6 +138,18 @@ export interface InfoData {
         high_24h:{
             usd: number;
         };
+        low_24h:{
+            usd: number;
+        };
+        market_cap: {
+            usd: number;
+        };
+        total_volume:{
+            usd: number;
+        }
+        circulating_supply: number;
+        max_supply: number;
+        total_supply: number;
     };
     name: string;
     platforms: { [key: string]: string };

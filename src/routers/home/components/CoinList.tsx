@@ -9,7 +9,7 @@ function CoinList({ coins }: { coins: CoinProps[] }) {
         <>
             {coins.map((coin) => (
                 <Link to={`/coin/${coin.id}`} key={coin.id}>
-                    <div className="bg-[#202841] rounded-xl p-4 flex flex-col justify-between h-44">
+                    <div className="bg-[#202841] rounded-xl p-4 flex flex-col justify-between h-44 max-w-screen-sm">
                         <div className="flex flex-col justify-start items-start space-y-1">
                             <div className="flex items-center gap-2">
                                 <img className="w-8 h-8" src={coin.image} alt={coin.id}/>
