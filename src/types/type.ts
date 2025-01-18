@@ -150,6 +150,9 @@ export interface InfoData {
         circulating_supply: number;
         max_supply: number;
         total_supply: number;
+        fully_diluted_valuation:{
+            usd: number;
+        }
     };
     name: string;
     platforms: { [key: string]: string };
