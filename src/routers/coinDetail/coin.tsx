@@ -4,6 +4,7 @@ import BackBtn from "../../globalComponents/BackBtn.tsx";
 import CoinDetail from "./components/CoinDetail.tsx";
 import CoinPrice from "./components/CoinPrice.tsx";
 import {useGetCoinDetail} from "./hook/useGetCoinDetailData.tsx";
+import Chart from "./components/Chart.tsx";
 
 
 function Coin() {
@@ -16,15 +17,17 @@ function Coin() {
     if(isLoading) return <div>loading...</div>
 
     return (
-        <div className="flex flex-col gap-4 text-blue-500 text-6xl w-screen">
-            <BackBtn/>
-            <div className="bg-amber-900 text-white p-12 mr-4  flex flex-col gap-4">
+        <div className="flex flex-col gap-4 text-6xl">
+            <div className="py-5">
+                <BackBtn/>
+            </div>
+            <div className="text-white flex flex-col gap-6">
                 {!data ? <div>loading...</div> : <CoinDetail />}
                 <div>
-                    {!data ? <div>loading</div> : <CoinPrice coin={data}/>}
+                    {!data ? <div>loading</div> : <CoinPrice/>}
                 </div>
             </div>
-            <span>chart</span>
+            <Chart/>
         </div>
     );
 }

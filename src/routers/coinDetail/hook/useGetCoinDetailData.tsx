@@ -4,13 +4,13 @@ import {getCoinDetail} from "../api/api.ts";
 
 export function useGetCoinDetail(coinId: string) {
     const oneHour = 1000 * 60 * 60;
-    const {data,isLoading} = useQuery<InfoData>(
+    const {data,isLoading, error} = useQuery<InfoData>(
         {
             queryKey: [`${coinId} Detail`],
             queryFn:() => getCoinDetail(coinId),
             staleTime: oneHour
         }
     );
-    return {data, isLoading};
+    return {data, isLoading,error};
 }
 
