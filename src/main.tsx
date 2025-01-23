@@ -9,6 +9,8 @@ import App from './App.tsx'
 import Coins from "./routers/home/coins.tsx";
 import Coin from "./routers/coinDetail/coin.tsx";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
+import Chart from "./routers/coinDetail/components/Chart.tsx";
+import CandleChart from "./routers/coinDetail/components/CandleChart.tsx";
 
 
 const queryClient = new QueryClient()
@@ -23,7 +25,17 @@ const router = createBrowserRouter([
             },
             {
                 path:"coin/:coinId",
-                element:<Coin />
+                element:<Coin />,
+                children:[
+                    {
+                        path:"",
+                        element:<Chart/>
+                    },
+                    {
+                        path:"price",
+                        element:<CandleChart/>
+                    }
+                ]
             }
         ],
     },

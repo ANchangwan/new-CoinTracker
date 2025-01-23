@@ -4,7 +4,7 @@ import BackBtn from "../../globalComponents/BackBtn.tsx";
 import CoinDetail from "./components/CoinDetail.tsx";
 import CoinPrice from "./components/CoinPrice.tsx";
 import {useGetCoinDetail} from "./hook/useGetCoinDetailData.tsx";
-import Chart from "./components/Chart.tsx";
+import CoinChartComponent from "./components/Chart-component.tsx";
 
 
 function Coin() {
@@ -27,7 +27,7 @@ function Coin() {
                     {!data ? <div>loading</div> : <CoinPrice/>}
                 </div>
             </div>
-            <Chart/>
+            <CoinChartComponent/>
         </div>
     );
 }

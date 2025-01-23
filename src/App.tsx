@@ -1,4 +1,4 @@
-import {Outlet,ScrollRestoration} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import Navbar from "./globalComponents/Navbar.tsx";
 
 
@@ -12,7 +12,7 @@ function App() {
             <div className="relative left-72 right-0 flex-grow overflow-y-auto p-4 max-w-screen-xl">
                 <Outlet/>
             </div>
-            <ScrollRestoration/>
+
         </div>
     )
 }
