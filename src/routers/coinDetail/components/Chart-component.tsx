@@ -6,8 +6,8 @@ function CoinChartComponent() {
     const location = useLocation();
     const isPriceActive = location.pathname.endsWith("price");
     return (
-        <div className="">
-            <div className="relative flex justify-center items-center w-40 p-2 shadow-inner">
+        <div className="bg-[#202841] w-3/4 rounded-lg p-4 flex flex-col gap-4">
+            <div className="relative flex justify-center items-center w-40 p-2 shadow-inner bg-gray-700 rounded-lg">
                 {/* 배경 애니메이션 */}
                 <div
                     className={`absolute top-2 bottom-0 left-8 w-12 h-12 bg-neutral-600 rounded-lg transform transition-transform duration-500 ${

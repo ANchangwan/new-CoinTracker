@@ -27,7 +27,9 @@ function Coin() {
                     {!data ? <div>loading</div> : <CoinPrice/>}
                 </div>
             </div>
+
             <CoinChartComponent/>
+
         </div>
     );
 }

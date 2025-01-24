@@ -8,15 +8,19 @@ function CandleChart() {
     const { data, isLoading, error } = useGetCoinOlhv(safeCoins, 7);
 
     // ApexCharts 데이터 및 옵션 설정 (Candlestick Chart)
+
     const chartData = data
         ? {
             series: [
                 {
                     name: "Candlestick",
-                    data: data.map(([time, open, high, low, close]: IGetCoinOlhvProps) => ({
-                        x: new Date(time),
-                        y: [open, high, low, close], // Candlestick requires [open, high, low, close]
-                    })),
+                    // 캔들스틱 데이터는 [open, high, low, close] 배열 형식을 사용
+                    data: data.map(
+                        ([time, open, high, low, close]: IGetCoinOlhvProps) => ({
+                            x: new Date(time),
+                            y: [open, high, low, close],
+                        })
+                    ),
                 },
             ],
             options: {
@@ -24,27 +28,56 @@ function CandleChart() {
                     type: "candlestick",
                     height: 350,
                     zoom: {
-                        enabled: true,
+                        enabled: true, // 줌 기능 활성화
                     },
                 },
                 title: {
                     text: "Candlestick Chart",
                     align: "left",
+                    style: {
+                        fontSize: "20px",
+                        color: "#FFFFFF", // 흰색 제목
+                        fontWeight: "bold",
+                    },
                 },
                 xaxis: {
                     type: "datetime",
                     labels: {
-                        format: "MMM dd",
+                        style: {
+                            colors: "#FFFFFF", // X축 라벨 흰색
+                            fontSize: "12px",
+                            fontWeight: "bold",
+                        },
+                        format: "MMM dd", // 날짜 형식
+                    },
+                    title: {
+                        text: "Date",
+                        style: {
+                            color: "#FFFFFF",
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                        },
                     },
                 },
                 yaxis: {
                     title: {
                         text: "Price (USD)",
+                        style: {
+                            color: "#FFFFFF",
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                        },
+                    },
+                    labels: {
+                        style: {
+                            colors: "#FFFFFF", // Y축 라벨 흰색
+                            fontSize: "12px",
+                        },
                     },
                 },
                 tooltip: {
                     x: {
-                        format: "MMM dd HH:mm",
+                        format: "MMM dd HH:mm", // 툴팁의 X축 데이터 포맷
                     },
                 },
             },
@@ -55,15 +88,14 @@ function CandleChart() {
     if (error || !chartData) return <div>Error loading chart</div>;
 
     return (
-        <div className="w-3/4">
-            <h1 className="ml-2.5 text-purple-700 uppercase">Candlestick Chart</h1>
+
             <ReactApexChart
                 options={chartData.options}
                 series={chartData.series}
                 type="candlestick"
                 height={350}
             />
-        </div>
+
     );
 }
 

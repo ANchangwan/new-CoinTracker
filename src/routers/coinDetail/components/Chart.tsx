@@ -14,7 +14,7 @@ function Chart() {
             series: [
                 {
                     name: "Price",
-                    data: data.map(([time, , , , close]:IGetCoinOlhvProps) => ({
+                    data: data.map(([ time, close ]: IGetCoinOlhvProps) => ({
                         x: new Date(time),
                         y: close,
                     })),
@@ -27,21 +27,56 @@ function Chart() {
                     zoom: {
                         enabled: true,
                     },
+
                 },
                 xaxis: {
                     type: "datetime",
                     labels: {
+                        style: {
+                            colors: "#FFFFFF", // 밝은 흰색 글씨
+                            fontSize: "12px",
+                            fontWeight: "bold",
+                        },
                         format: "MMM dd",
+                    },
+                    title: {
+                        text: "Date",
+                        style: {
+                            color: "#FFFFFF", // X축 제목도 흰색으로
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                        },
                     },
                 },
                 yaxis: {
                     title: {
                         text: "Price (USD)",
+                        style: {
+                            color: "#FFFFFF", // Y축 제목도 흰색으로
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                        },
+                    },
+                    labels: {
+                        style: {
+                            colors: "#FFFFFF", // Y축 레이블도 흰색
+                            fontSize: "12px",
+                        },
                     },
                 },
                 tooltip: {
                     x: {
                         format: "MMM dd HH:mm",
+                    },
+                },
+
+                title: {
+                    text: "Price Chart",
+                    align: "left",
+                    style: {
+                        fontSize: "20px",
+                        color: "#FFFFFF", // 제목 글씨 흰색
+                        fontWeight: "bold",
                     },
                 },
             },
@@ -52,15 +87,12 @@ function Chart() {
     if (error || !chartData) return <div>Error loading chart </div>;
 
     return (
-        <div className="w-3/4 ">
-            <h1 className="ml-2.5 text-purple-700 uppercase">Price Chart</h1>
             <ReactApexChart
                 options={chartData.options}
                 series={chartData.series}
                 type="line"
                 height={350}
             />
-        </div>
     );
 }
 

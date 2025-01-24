@@ -6,3 +6,9 @@
 body {
     @apply dark:bg-[#15192A];
 }
+
+@layer components{
+    .back-ground{
+        @apply bg-[#202841] ;
+    }
+}
