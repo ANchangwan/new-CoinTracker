@@ -9,6 +9,7 @@ function CandleChart() {
 
     // ApexCharts 데이터 및 옵션 설정 (Candlestick Chart)
 
+
     const chartData = data
         ? {
             series: [

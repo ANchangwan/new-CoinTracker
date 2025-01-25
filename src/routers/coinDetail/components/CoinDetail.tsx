@@ -29,9 +29,9 @@ function CoinDetail() {
                     <div className="text-xl text-white w-20 h-10 flex justify-center items-center rounded-xl">
                         <PriceTrendIndicator data={data}/>
                     </div>
-                    <div className="text-xl text-white font-semibold">
-                        {data.tickers[0]?.last || "N/A"}
-                    </div>
+                    {/*<div className="text-xl text-white font-semibold">*/}
+                    {/*    {data.tickers[0]?.last || "N/A"}$*/}
+                    {/*</div>*/}
                 </div>
             </div>
         ) : null

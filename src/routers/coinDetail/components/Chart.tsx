@@ -9,6 +9,7 @@ function Chart() {
 
     // ApexCharts 데이터 및 옵션 설정
 
+
     const chartData = data
         ? {
             series: [

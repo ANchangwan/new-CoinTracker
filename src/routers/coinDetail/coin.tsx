@@ -1,5 +1,4 @@
 import {useParams} from "react-router-dom";
-
 import BackBtn from "../../globalComponents/BackBtn.tsx";
 import CoinDetail from "./components/CoinDetail.tsx";
 import CoinPrice from "./components/CoinPrice.tsx";
@@ -27,7 +26,6 @@ function Coin() {
                     {!data ? <div>loading</div> : <CoinPrice/>}
                 </div>
             </div>
-
             <CoinChartComponent/>
 
         </div>
