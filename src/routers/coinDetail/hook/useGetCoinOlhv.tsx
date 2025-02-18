@@ -2,18 +2,15 @@ import {useQuery} from "@tanstack/react-query";
 
 import { getCoinOhlc } from "../api/api.ts";
 
-export interface IGetCoinOlhvProps {
-    time:number;
-    open:number;
-    high:number;
-    low:number;
-    close:number;
-}
+export type IOhlvData = [number,number, number,number,number];
+
+
+
 
 export function useGetCoinOlhv(coinId: string,days:number) {
     const oneHour = 1000 * 60 * 60;
 
-    const {data, isLoading, error} = useQuery<IGetCoinOlhvProps[]>(
+    const {data, isLoading, error} = useQuery<IOhlvData[]>(
         {
             queryKey: [`${coinId} ohlv days ${days}`],
             queryFn:() => getCoinOhlc(coinId,days),

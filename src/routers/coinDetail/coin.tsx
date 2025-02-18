@@ -27,7 +27,6 @@ function Coin() {
                 </div>
             </div>
             <CoinChartComponent/>
-
         </div>
     );
 }

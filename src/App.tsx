@@ -12,7 +12,6 @@ function App() {
             <div className="relative left-72 right-0 pb-28 p-4  max-w-screen-xl">
                 <Outlet/>
             </div>
-
         </div>
     )
 }
